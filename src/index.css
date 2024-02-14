@@ -1,13 +1,145 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: WorkSans;
+  font-weight: 400;
+  src: url('mentorFolder/assets/fonts/static/WorkSans-Regular.ttf');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: WorkSans;
+  font-weight: 600;
+  src: url('mentorFolder/assets/fonts/static/WorkSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: WorkSans;
+  font-weight: 700;
+  src: url('mentorFolder/assets/fonts/static/WorkSans-Bold.ttf');
+}
+
+:root {
+  --light-pink: hsl(275, 100%, 97%);
+  --greyish-purple: hsl(292, 16%, 49%);
+  --dark-purpl: hsl(292, 42%, 14%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'WorkSans';
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  background: no-repeat url('mentorFolder/assets/images/background-pattern-desktop.svg'), var(--light-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  width: 500px;
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+}
+
+.headingBox {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-size: 2.7rem;
+}
+
+.qnaBox {
+  padding: 15px 0 15px 0;
+}
+
+.qnaBoxOpen {
+  border: none;
+}
+
+.qnaBoxClosed {
+  border-bottom: 1px solid rgb(234, 234, 234);
+}
+
+.qnaBox:nth-child(5) {
+  padding-bottom: 0;
+  border: none;
+}
+
+.qBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.qBox button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 26px;
+  height: 27px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qBox button:focus {
+  box-shadow: 0 0 10px #AD28EB, 0 0 2px #AD28EB
+}
+
+.qBox p {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.qBox p:hover {
+  color: #AD28EB;
+}
+
+.qBox img {
+  cursor: pointer;
+}
+
+.accordionBox {
+  display: grid;
+  font-size: 0.9rem;
+  color: var(--greyish-purple);
+  transition: grid-template-rows 0.5s ease-out;
+}
+
+.closed {
+  grid-template-rows: 0fr;
+}
+
+.open {
+  grid-template-rows: 1fr;
+}
+
+.comment {
+  overflow: hidden;
+}
+
+@media (max-width: 650px) {
+  .App {
+    width: 300px;
+    margin: 0 20px 0 20px;
+    padding: 25px 20px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .qBox p {
+    max-width: 220px;
+  }
 }

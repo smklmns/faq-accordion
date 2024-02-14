@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import star from './mentorFolder/assets/images/icon-star.svg'
+import Questions from './Questions';
+import {data} from './Data'
 
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className="headingBox">
+        <img src={star} alt="icon" />
+        <h1>FAQs</h1>
+      </div>
+
+      {data.map(index => {
+        return (
+          <Questions
+            key={index.id}
+            question={index.question}
+            answer={index.answer}
+            index={index}
+          />
+        )
+      })}
+      
     </div>
   );
 }
